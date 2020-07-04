@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="stock_management_system.Models.Category">
+    <Position X="12" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.Product">
+    <Position X="7.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAgAiAAAAAAQAQEgAAAAAAAEIAAAAAACAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Stock" />
+      <Property Name="Category" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CheckoutLists" />
+      <Property Name="CheckInLists" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.Employee">
+    <Position X="4.25" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAABAAIAAIAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Employee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="CheckIn" />
+      <Property Name="Checkout" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.Checkin">
+    <Position X="9.25" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEACAAQAAAAAAIAAAAAEAAAACAAAAAABAgAAAAAiAAA=</HashCode>
+      <FileName>Models\Checkin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Supplier" />
+      <Property Name="Employee" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CheckinLists" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.CheckinList">
+    <Position X="15" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAIAJAAAAAAAAAQAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\CheckinList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+      <Property Name="Checkin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.Checkout">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAAACAAA=</HashCode>
+      <FileName>Models\Checkout.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Employee" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CheckoutLists" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.CheckoutList">
+    <Position X="2.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAABAQAIAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\CheckoutList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Checkout" />
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.Stock">
+    <Position X="3.25" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAgAAAAAA=</HashCode>
+      <FileName>Models\Stock.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="stock_management_system.Models.Supplier">
+    <Position X="15.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAIAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Supplier.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Checkin" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
