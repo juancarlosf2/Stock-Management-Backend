@@ -106,5 +106,19 @@ namespace stock_management_system.Controllers
         {
             return _context.Stock.Any(e => e.Id == id);
         }
+
+        // GET: api/StockByProduct/213245
+        [HttpGet("StockByProduct/{id}")]
+        public async Task<ActionResult<Stock>> GetStockByProduct(string productSku)
+        {
+            var stock = await _context.Stock.Where(s => s.ProductSku == productSku).SingleAsync();
+
+            if (stock == null)
+            {
+                return NotFound();
+            }
+
+            return stock;
+        }
     }
 }

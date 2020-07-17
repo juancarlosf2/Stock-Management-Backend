@@ -64,7 +64,7 @@ namespace stock_management_system.Migrations
                     CategoryId = table.Column<int>(nullable: true),
                     Name = table.Column<string>(maxLength: 60, nullable: false),
                     Description = table.Column<string>(nullable: true),
-                    Photo = table.Column<byte[]>(nullable: true),
+                    PhotoUri = table.Column<string>(nullable: true),
                     AlertQuantity = table.Column<int>(nullable: true),
                     SellingPrice = table.Column<int>(nullable: true),
                     MarginProfitability = table.Column<int>(nullable: true),
@@ -237,45 +237,43 @@ namespace stock_management_system.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Sku", "AlertQuantity", "CategoryId", "Description", "MarginProfitability", "Name", "Photo", "SellingPrice", "Units" },
+                columns: new[] { "Sku", "AlertQuantity", "CategoryId", "Description", "MarginProfitability", "Name", "PhotoUri", "SellingPrice", "Units" },
                 values: new object[] { "IS000001", 5, 1, "Una paquete de papitas de papa pequeñas", null, "Papita fritolay papa", null, 250, 25 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Sku", "AlertQuantity", "CategoryId", "Description", "MarginProfitability", "Name", "Photo", "SellingPrice", "Units" },
+                columns: new[] { "Sku", "AlertQuantity", "CategoryId", "Description", "MarginProfitability", "Name", "PhotoUri", "SellingPrice", "Units" },
                 values: new object[] { "IS000002", 5, 1, "Una paquete de papitas de dorito original pequeñas", null, "Papita doritos original", null, 350, 25 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Sku", "AlertQuantity", "CategoryId", "Description", "MarginProfitability", "Name", "Photo", "SellingPrice", "Units" },
+                columns: new[] { "Sku", "AlertQuantity", "CategoryId", "Description", "MarginProfitability", "Name", "PhotoUri", "SellingPrice", "Units" },
                 values: new object[] { "IS000003", 5, 3, "Una paquete de pasta dental colgate en tamaño pequeñas", null, "Pasta dental colgate pequeña", null, 500, 10 });
 
             migrationBuilder.InsertData(
                 table: "Stock",
                 columns: new[] { "Id", "ProductSku", "Quantity", "Updated" },
-                values: new object[] { 1, "IS000001", 10, new DateTime(2020, 7, 3, 20, 24, 7, 41, DateTimeKind.Utc).AddTicks(2924) });
+                values: new object[] { 1, "IS000001", 10, new DateTime(2020, 7, 11, 4, 28, 53, 468, DateTimeKind.Utc).AddTicks(8393) });
 
             migrationBuilder.InsertData(
                 table: "Stock",
                 columns: new[] { "Id", "ProductSku", "Quantity", "Updated" },
-                values: new object[] { 2, "IS000002", 15, new DateTime(2020, 7, 3, 20, 24, 7, 41, DateTimeKind.Utc).AddTicks(4254) });
+                values: new object[] { 2, "IS000002", 15, new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(985) });
 
             migrationBuilder.InsertData(
                 table: "Stock",
                 columns: new[] { "Id", "ProductSku", "Quantity", "Updated" },
-                values: new object[] { 3, "IS000003", 5, new DateTime(2020, 7, 3, 20, 24, 7, 41, DateTimeKind.Utc).AddTicks(4298) });
+                values: new object[] { 3, "IS000003", 5, new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(1084) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Checkin_EmployeeId",
                 table: "Checkin",
-                column: "EmployeeId",
-                unique: true);
+                column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Checkin_SupplierId",
                 table: "Checkin",
-                column: "SupplierId",
-                unique: true);
+                column: "SupplierId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CheckinLists_CheckinId",
@@ -290,8 +288,7 @@ namespace stock_management_system.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Checkout_EmployeeId",
                 table: "Checkout",
-                column: "EmployeeId",
-                unique: true);
+                column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CheckoutLists_ProductSku",
@@ -312,7 +309,8 @@ namespace stock_management_system.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Stock_ProductSku",
                 table: "Stock",
-                column: "ProductSku");
+                column: "ProductSku",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Suppliers_Email",

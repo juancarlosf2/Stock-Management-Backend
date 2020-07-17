@@ -10,7 +10,7 @@ using stock_management_system.Data;
 namespace stock_management_system.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200703202407_stock_management_system")]
+    [Migration("20200711042853_stock_management_system")]
     partial class stock_management_system
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,11 +89,9 @@ namespace stock_management_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EmployeeId")
-                        .IsUnique();
+                    b.HasIndex("EmployeeId");
 
-                    b.HasIndex("SupplierId")
-                        .IsUnique();
+                    b.HasIndex("SupplierId");
 
                     b.ToTable("Checkin");
                 });
@@ -145,8 +143,7 @@ namespace stock_management_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EmployeeId")
-                        .IsUnique();
+                    b.HasIndex("EmployeeId");
 
                     b.ToTable("Checkout");
                 });
@@ -255,8 +252,8 @@ namespace stock_management_system.Migrations
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
-                    b.Property<byte[]>("Photo")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("PhotoUri")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SellingPrice")
                         .HasColumnType("int");
@@ -323,7 +320,8 @@ namespace stock_management_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductSku");
+                    b.HasIndex("ProductSku")
+                        .IsUnique();
 
                     b.ToTable("Stock");
 
@@ -333,21 +331,21 @@ namespace stock_management_system.Migrations
                             Id = 1,
                             ProductSku = "IS000001",
                             Quantity = 10,
-                            Updated = new DateTime(2020, 7, 3, 20, 24, 7, 41, DateTimeKind.Utc).AddTicks(2924)
+                            Updated = new DateTime(2020, 7, 11, 4, 28, 53, 468, DateTimeKind.Utc).AddTicks(8393)
                         },
                         new
                         {
                             Id = 2,
                             ProductSku = "IS000002",
                             Quantity = 15,
-                            Updated = new DateTime(2020, 7, 3, 20, 24, 7, 41, DateTimeKind.Utc).AddTicks(4254)
+                            Updated = new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(985)
                         },
                         new
                         {
                             Id = 3,
                             ProductSku = "IS000003",
                             Quantity = 5,
-                            Updated = new DateTime(2020, 7, 3, 20, 24, 7, 41, DateTimeKind.Utc).AddTicks(4298)
+                            Updated = new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(1084)
                         });
                 });
 
@@ -403,14 +401,14 @@ namespace stock_management_system.Migrations
             modelBuilder.Entity("stock_management_system.Models.Checkin", b =>
                 {
                     b.HasOne("stock_management_system.Models.Employee", "Employee")
-                        .WithOne("Checkin")
-                        .HasForeignKey("stock_management_system.Models.Checkin", "EmployeeId")
+                        .WithMany("CheckIn")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("stock_management_system.Models.Supplier", "Supplier")
-                        .WithOne("Checkin")
-                        .HasForeignKey("stock_management_system.Models.Checkin", "SupplierId")
+                        .WithMany("Checkin")
+                        .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -424,22 +422,22 @@ namespace stock_management_system.Migrations
                         .IsRequired();
 
                     b.HasOne("stock_management_system.Models.Product", "Product")
-                        .WithMany("CheckinLists")
+                        .WithMany("CheckInLists")
                         .HasForeignKey("ProductSku");
                 });
 
             modelBuilder.Entity("stock_management_system.Models.Checkout", b =>
                 {
                     b.HasOne("stock_management_system.Models.Employee", "Employee")
-                        .WithOne("Checkout")
-                        .HasForeignKey("stock_management_system.Models.Checkout", "EmployeeId")
+                        .WithMany("Checkout")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("stock_management_system.Models.CheckoutList", b =>
                 {
-                    b.HasOne("stock_management_system.Models.Checkout", "CheckOut")
+                    b.HasOne("stock_management_system.Models.Checkout", "Checkout")
                         .WithMany("CheckoutLists")
                         .HasForeignKey("CheckoutId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -462,8 +460,8 @@ namespace stock_management_system.Migrations
             modelBuilder.Entity("stock_management_system.Models.Stock", b =>
                 {
                     b.HasOne("stock_management_system.Models.Product", "Product")
-                        .WithMany("ProductStock")
-                        .HasForeignKey("ProductSku")
+                        .WithOne("Stock")
+                        .HasForeignKey("stock_management_system.Models.Stock", "ProductSku")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

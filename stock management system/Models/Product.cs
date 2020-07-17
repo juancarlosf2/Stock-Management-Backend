@@ -24,8 +24,8 @@ namespace stock_management_system.Models
         [DisplayName("Description")]
         public string? Description { get; set; }
             
-        // falta agregar restricciones y anotaciones a este campo imagen
-        public byte[] Photo { get; set; }
+        [DisplayName("Photo Uri")]
+        public string PhotoUri { get; set; }
 
         [DisplayName("Alert Quantity")]
         public int? AlertQuantity { get; set; }

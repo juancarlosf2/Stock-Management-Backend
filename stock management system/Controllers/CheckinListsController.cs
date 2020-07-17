@@ -21,7 +21,7 @@ namespace stock_management_system.Controllers
             _context = context;
         }
 
-        // GET: api/CheckinLists
+        // GET: api/CheckinLists    
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CheckinList>>> GetCheckinLists()
         {

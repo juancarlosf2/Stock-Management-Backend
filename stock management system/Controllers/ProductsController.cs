@@ -29,6 +29,7 @@ namespace stock_management_system.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
+            
             return await _context.Products.ToListAsync();
         }
 
@@ -36,8 +37,9 @@ namespace stock_management_system.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(string id)
         {
-            var product = await _context.Products.FindAsync(id);
 
+            var product = await _context.Products.FindAsync(id);
+            
             if (product == null)
             {
                 return NotFound();
@@ -83,17 +85,9 @@ namespace stock_management_system.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product, IFormFile photo)
+        public async Task<ActionResult<Product>> PostProduct(Product product)
         {
-            using (MemoryStream stream = new MemoryStream())
-            {
-                await photo.CopyToAsync(stream);
-                product.Photo = stream.ToArray();
-
-            }
-
             _context.Products.Add(product);
-
 
             try
             {
@@ -135,11 +129,11 @@ namespace stock_management_system.Controllers
             return _context.Products.Any(e => e.Sku == id);
         }
 
-        // GET: api/Products-by-Category/1
-        [HttpGet("{categoryId}")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(int categoryId)
+        // GET: api/Products/Products-by-Category/1
+        [HttpGet("Products-by-Category/{id}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(int id)
         {
-            var products = await _context.Products.Where(product => product.CategoryId == categoryId).ToListAsync();
+            var products = await _context.Products.Where(product => product.CategoryId == id).ToListAsync();
             if (products == null)
             {
                 return NotFound();

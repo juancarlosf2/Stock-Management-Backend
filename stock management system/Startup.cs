@@ -36,7 +36,7 @@ namespace stock_management_system
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.WithOrigins("http://localhost:3000")
+                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:19002", "http://localhost:19006")
                 );
 
 
@@ -61,8 +61,6 @@ namespace stock_management_system
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseStaticFiles();
 
             app.UseCors("CorsPolicy");
 
