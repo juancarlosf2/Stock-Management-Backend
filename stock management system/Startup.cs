@@ -71,7 +71,7 @@ namespace stock_management_system
 
            app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Could not find anything");
+                await context.Response.WriteAsync("Could not find anything yet");
             });
         }
     }
