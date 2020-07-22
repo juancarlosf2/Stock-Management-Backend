@@ -50,6 +50,8 @@ namespace stock_management_system
             {
                 options.AddPolicy("CorsPolicy",
                     builder => builder.WithOrigins("http://localhost:3000", "http://localhost:19002", "http://localhost:19006")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod()
                 );
 
 
