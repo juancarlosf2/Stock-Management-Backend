@@ -10,8 +10,8 @@ using stock_management_system.Data;
 namespace stock_management_system.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200711042853_stock_management_system")]
-    partial class stock_management_system
+    [Migration("20200729153057_Stock_Management_System")]
+    partial class Stock_Management_System
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -189,8 +189,7 @@ namespace stock_management_system.Migrations
                         .HasMaxLength(30);
 
                     b.Property<long>("Phone")
-                        .HasColumnType("bigint")
-                        .HasMaxLength(10);
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -331,21 +330,21 @@ namespace stock_management_system.Migrations
                             Id = 1,
                             ProductSku = "IS000001",
                             Quantity = 10,
-                            Updated = new DateTime(2020, 7, 11, 4, 28, 53, 468, DateTimeKind.Utc).AddTicks(8393)
+                            Updated = new DateTime(2020, 7, 29, 15, 30, 57, 591, DateTimeKind.Utc).AddTicks(4198)
                         },
                         new
                         {
                             Id = 2,
                             ProductSku = "IS000002",
                             Quantity = 15,
-                            Updated = new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(985)
+                            Updated = new DateTime(2020, 7, 29, 15, 30, 57, 591, DateTimeKind.Utc).AddTicks(5475)
                         },
                         new
                         {
                             Id = 3,
                             ProductSku = "IS000003",
                             Quantity = 5,
-                            Updated = new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(1084)
+                            Updated = new DateTime(2020, 7, 29, 15, 30, 57, 591, DateTimeKind.Utc).AddTicks(5522)
                         });
                 });
 
@@ -367,8 +366,7 @@ namespace stock_management_system.Migrations
                         .HasMaxLength(60);
 
                     b.Property<long>("Phone")
-                        .HasColumnType("bigint")
-                        .HasMaxLength(10);
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 

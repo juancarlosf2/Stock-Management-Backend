@@ -49,11 +49,11 @@ namespace stock_management_system
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:19002", "http://localhost:19006")
+                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:19002", "http://localhost:19006", "http://localhost:19000")
                                       .AllowAnyHeader()
                                       .AllowAnyMethod()
                 );
-
+                
 
             });
             services.AddControllers();

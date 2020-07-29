@@ -22,7 +22,7 @@ namespace stock_management_system.Models
         [Required, DataType(DataType.EmailAddress), MaxLength(100), DisplayName("Email")]
         public string Email { get; set; }
 
-        [Display(Name = "Phone"), MinLength(10), MaxLength(10), Range(0, 9999999999), DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone"), Range(0, 9999999999), DataType(DataType.PhoneNumber)]
         public long Phone { get; set; }
 
         public ICollection<Checkin> CheckIn { get; set; }

@@ -16,7 +16,7 @@ namespace stock_management_system.Models
         [Required, MaxLength(60), DisplayName("Name")]
         public string Name { get; set; }
 
-        [Display(Name = "Phone Number"), MinLength(10), MaxLength(10), Range(0, 9999999999), DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone Number"), Range(0, 9999999999), DataType(DataType.PhoneNumber)]
         public long Phone { get; set; }
 
         [Required, DataType(DataType.EmailAddress), MaxLength(100), DisplayName("Email")]

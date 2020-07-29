@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace stock_management_system.Migrations
 {
-    public partial class stock_management_system : Migration
+    public partial class Stock_Management_System : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,7 @@ namespace stock_management_system.Migrations
                     Name = table.Column<string>(maxLength: 30, nullable: false),
                     Lastname = table.Column<string>(maxLength: 30, nullable: false),
                     Email = table.Column<string>(maxLength: 100, nullable: false),
-                    Phone = table.Column<long>(maxLength: 10, nullable: false)
+                    Phone = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,7 +46,7 @@ namespace stock_management_system.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 60, nullable: false),
-                    Phone = table.Column<long>(maxLength: 10, nullable: false),
+                    Phone = table.Column<long>(nullable: false),
                     Email = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
@@ -253,17 +253,17 @@ namespace stock_management_system.Migrations
             migrationBuilder.InsertData(
                 table: "Stock",
                 columns: new[] { "Id", "ProductSku", "Quantity", "Updated" },
-                values: new object[] { 1, "IS000001", 10, new DateTime(2020, 7, 11, 4, 28, 53, 468, DateTimeKind.Utc).AddTicks(8393) });
+                values: new object[] { 1, "IS000001", 10, new DateTime(2020, 7, 29, 15, 30, 57, 591, DateTimeKind.Utc).AddTicks(4198) });
 
             migrationBuilder.InsertData(
                 table: "Stock",
                 columns: new[] { "Id", "ProductSku", "Quantity", "Updated" },
-                values: new object[] { 2, "IS000002", 15, new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(985) });
+                values: new object[] { 2, "IS000002", 15, new DateTime(2020, 7, 29, 15, 30, 57, 591, DateTimeKind.Utc).AddTicks(5475) });
 
             migrationBuilder.InsertData(
                 table: "Stock",
                 columns: new[] { "Id", "ProductSku", "Quantity", "Updated" },
-                values: new object[] { 3, "IS000003", 5, new DateTime(2020, 7, 11, 4, 28, 53, 469, DateTimeKind.Utc).AddTicks(1084) });
+                values: new object[] { 3, "IS000003", 5, new DateTime(2020, 7, 29, 15, 30, 57, 591, DateTimeKind.Utc).AddTicks(5522) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Checkin_EmployeeId",
