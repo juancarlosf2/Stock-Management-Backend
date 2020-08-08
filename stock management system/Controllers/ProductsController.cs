@@ -27,10 +27,23 @@ namespace stock_management_system.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts([FromQuery(Name = "category_id")]int? id, [FromQuery(Name = "search")]string searchString)
         {
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                return await _context.Products.Where(p => p.Name.Contains(searchString)).OrderBy(p => p.Name).ToListAsync();
+            }
+            switch(id.HasValue){
+                case true:
+                    {
+                        return await _context.Products.Where(p => p.CategoryId == id).OrderBy(product => product.Name).ToListAsync();
+                    }
+                default: 
+                    return await _context.Products.OrderBy(product => product.Name).ToListAsync();
+                    
+            }
+
             
-            return await _context.Products.ToListAsync();
         }
 
         // GET: api/Products/5
@@ -130,15 +143,16 @@ namespace stock_management_system.Controllers
         }
 
         // GET: api/Products/Products-by-Category/1
-        [HttpGet("Products-by-Category/{id}")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(int id)
+        /*[HttpGet()]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts([FromQuery(Name = "category_id")]int id)
         {
-            var products = await _context.Products.Where(product => product.CategoryId == id).ToListAsync();
+            var products = await _context.Products.OrderBy(p => p.CategoryId).ToListAsync();
+            //.Where(product => product.CategoryId == id).ToListAsync();
             if (products == null)
             {
                 return NotFound();
             }
             return products;
-        }
+        }*/
     }
 }
