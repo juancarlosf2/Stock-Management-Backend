@@ -29,17 +29,24 @@ namespace stock_management_system.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts([FromQuery(Name = "category_id")]int? id, [FromQuery(Name = "search")]string searchString)
         {
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                return await _context.Products.Where(p => p.Name.Contains(searchString)).OrderBy(p => p.Name).ToListAsync();
-            }
+            
             switch(id.HasValue){
                 case true:
                     {
+                        if (!String.IsNullOrEmpty(searchString))
+                        {
+                            return await _context.Products.Where(p => p.CategoryId == id & p.Name.Contains(searchString)).OrderBy(p => p.Name).ToListAsync();
+                        }
                         return await _context.Products.Where(p => p.CategoryId == id).OrderBy(product => product.Name).ToListAsync();
                     }
-                default: 
-                    return await _context.Products.OrderBy(product => product.Name).ToListAsync();
+                default:
+                    {
+                        if (!String.IsNullOrEmpty(searchString))
+                        {
+                            return await _context.Products.Where(p => p.Name.Contains(searchString)).OrderBy(p => p.Name).ToListAsync();
+                        }
+                        return await _context.Products.OrderBy(product => product.Name).ToListAsync();
+                    }
                     
             }
 
