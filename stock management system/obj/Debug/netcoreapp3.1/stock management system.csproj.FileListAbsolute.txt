@@ -160,3 +160,9 @@ C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.csproj.CoreCompileInputs.cache
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
