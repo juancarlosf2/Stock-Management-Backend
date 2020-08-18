@@ -25,6 +25,14 @@ namespace stock_management_system.Models
         [Display(Name = "Phone"), Range(0, 9999999999), DataType(DataType.PhoneNumber)]
         public long Phone { get; set; }
 
+        [Required, DataType(DataType.DateTime), DisplayName("CreatedDate")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+
+        [Required, DataType(DataType.DateTime), DisplayName("Updated")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime Updated { get; set; } = DateTime.UtcNow;
+
         public ICollection<Checkin> CheckIn { get; set; }
 
         public ICollection<Checkout> Checkout { get; set; }

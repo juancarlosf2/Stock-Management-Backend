@@ -25,28 +25,33 @@ namespace stock_management_system.Models
         public string? Description { get; set; }
             
         [DisplayName("Photo Uri")]
-        public string PhotoUri { get; set; }
+        public string? PhotoUri { get; set; }
 
         [DisplayName("Alert Quantity")]
         public int? AlertQuantity { get; set; }
 
         [DisplayName("Selling Price")]
         public int? SellingPrice { get; set; }
-        
-        [DisplayName("Margin Profitability")]
-        public int? MarginProfitability { get; set; }
 
         [DisplayName("Units")]
         public int Units { get; set; }
+
+        [Required, DisplayName("Quantity")]
+        public int Quantity { get; set; }
+
+        [Required, DataType(DataType.DateTime), DisplayName("CreatedDate")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+
+        [Required, DataType(DataType.DateTime), DisplayName("Updated")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime Updated { get; set; } = DateTime.UtcNow;
 
         public Category Category { get; set; }
 
         public ICollection<CheckinList> CheckInLists { get; set; }
 
         public ICollection<CheckoutList> CheckoutLists { get; set; }
-
-        public Stock Stock { get; set; }
-
 
     }
 }

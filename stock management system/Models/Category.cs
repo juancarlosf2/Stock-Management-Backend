@@ -16,6 +16,14 @@ namespace stock_management_system.Models
         [Required, MaxLength(30)]
         public string Name { get; set; }
 
+        [Required, DataType(DataType.DateTime), DisplayName("CreatedDate")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+
+        [Required, DataType(DataType.DateTime), DisplayName("Updated")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime Updated { get; set; } = DateTime.UtcNow;
+
         [DisplayName("Description")]
         public string? Description { get; set; }
 
