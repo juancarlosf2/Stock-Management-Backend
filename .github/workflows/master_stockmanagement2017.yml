@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@master
@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'stockmanagement2017'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e81eaae0c93f4b69aae88a43d0f1bc1f }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_22b1038618b543dcad21de2d6ec67118 }}
         package: ${{env.DOTNET_ROOT}}/myapp 
