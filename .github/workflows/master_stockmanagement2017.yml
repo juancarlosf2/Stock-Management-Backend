@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'stockmanagement2017'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_7aa073c8743e46cbb12aca4241f79b79 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e81eaae0c93f4b69aae88a43d0f1bc1f }}
         package: ${{env.DOTNET_ROOT}}/myapp 
