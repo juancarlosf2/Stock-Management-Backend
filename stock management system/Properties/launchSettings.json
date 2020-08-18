@@ -15,7 +15,8 @@
       "launchUrl": "api/products",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "ancmHostingModel": "OutOfProcess"
     },
     "stock_management_system": {
       "commandName": "Project",
