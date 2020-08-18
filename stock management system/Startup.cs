@@ -32,21 +32,9 @@ namespace stock_management_system
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-            {
-                services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("ProductionDefaultConnection")));
-                services.BuildServiceProvider()
-                   .GetService<ApplicationDbContext>().Database
-                   .Migrate();
-            }
-           else
-            {
                 services.AddDbContext<ApplicationDbContext>(options =>
                    options.UseSqlServer(
                        Configuration.GetConnectionString("DefaultConnection")));
-            }
 
             
             services.AddCors(options =>
@@ -60,7 +48,7 @@ namespace stock_management_system
 
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+           
             services.AddControllers();
 
             services.AddSwaggerGen(c =>

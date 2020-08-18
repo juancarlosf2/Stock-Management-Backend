@@ -157,12 +157,29 @@ C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
-C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.csproj.CoreCompileInputs.cache
-C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\appsettings.Production.json
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventLog.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.csproj.CoreCompileInputs.cache
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\juan_\Desktop\Programacion\ASP\stock management system\stock management system\obj\Debug\netcoreapp3.1\stock management system.MvcApplicationPartsAssemblyInfo.cache
